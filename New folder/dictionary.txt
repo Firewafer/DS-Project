@@ -1,0 +1,48 @@
+apple#A sweet fruit
+ball#Round toy
+brave#Showing courage
+calm#Free from stress
+cloud#Sky water vapor
+dance#Move to music
+dream#Images during sleep
+eager#Very excited
+echo#Sound reflection
+faith#Strong belief
+frog#Jumping animal
+gift#A present
+glow#Soft light
+hill#Small mountain
+hope#Wanting something
+idea#A thought
+ink#Liquid for writing
+joke#Funny saying
+joy#Great happiness
+kind#Caring and nice
+kite#Flying toy
+lamp#Light source
+leaf#Part of a plant
+magic#Power to do wonders
+moon#Earths' satellite
+nest#Birds' home
+note#Short message
+ocean#Large sea
+orange#Citrus fruit
+peace#No conflict
+plant#Green living thing
+queen#Female ruler
+quick#Fast moving
+rain#Falling water drops
+river#Flowing water
+shine#Give off light
+star#Sky light at night
+tiger#Big wild cat
+trust#Belief in someone
+umbrella#Rain protector
+under#Below something
+value#Importance or worth
+violin#String instrument
+window#Glass wall opening
+wise#Full of knowledge
+x-ray#Body scan image
+yawn#Mouth open when tired
+zebra#Striped animal
