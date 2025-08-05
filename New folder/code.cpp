@@ -348,10 +348,12 @@ void searchWord(Node *root)
 
 bool readDataFromTxtFile(Node *&root)
 {
-    ifstream inputFile("dictionary.txt");
+    fstream inputFile("dictionary.txt", ios::in | ios::out);
 
     if (!inputFile){
-       showErrorMsg("File opening error!");
+         inputFile.open("dictionary.txt", ios::out);
+        inputFile.close();
+       //showErrorMsg("File opening error!");
        return false;
     }
     string line;
