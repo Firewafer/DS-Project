@@ -29,43 +29,6 @@ string toLowerCase(string s) {
     return s;
 }
 
-void showDictionaryTable(const vector<pair<string, string>>& data) {
-    cout << " All Words: \n";
-    const int wordWidth = 20;
-    const int meaningWidth = 40;
-
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    auto printBorder = [&]() {
-        cout << "+" << string(wordWidth + 2, '-') << "+" << string(meaningWidth + 2, '-') << "+\n";
-    };
-
-    printBorder();
-
-    CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
-    GetConsoleScreenBufferInfo(hConsole, &consoleInfo);
-    WORD originalColor = consoleInfo.wAttributes;
-
-    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-
-
-    cout << "| " << left << setw(wordWidth) << "Word"
-         << " | " << left << setw(meaningWidth) << "Meaning" << " |\n";
-
-
-    SetConsoleTextAttribute(hConsole, originalColor);
-
-
-    printBorder();
-
-
-    for (const auto& entry : data) {
-        cout << "| " << left << setw(wordWidth) << entry.first
-             << " | " << left << setw(meaningWidth) << entry.second << " |\n";
-        printBorder();
-    }
-}
-
 void showErrorMsg(const string &er){
 
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -107,6 +70,49 @@ void showInfoMsg(const string &er){
 
     SetConsoleTextAttribute(hConsole, originalColor);
 }
+
+void showDictionaryTable(const vector<pair<string, string>>& data) {
+    if((int)data.size() == 0){
+        showInfoMsg("No Words Available In Dictionary. Please Add New Word");
+        return;
+    }
+    cout << " All Words: \n";
+    const int wordWidth = 20;
+    const int meaningWidth = 40;
+
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    auto printBorder = [&]() {
+        cout << "+" << string(wordWidth + 2, '-') << "+" << string(meaningWidth + 2, '-') << "+\n";
+    };
+
+    printBorder();
+
+    CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
+    GetConsoleScreenBufferInfo(hConsole, &consoleInfo);
+    WORD originalColor = consoleInfo.wAttributes;
+
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+
+    cout << "| " << left << setw(wordWidth) << "Word"
+         << " | " << left << setw(meaningWidth) << "Meaning" << " |\n";
+
+
+    SetConsoleTextAttribute(hConsole, originalColor);
+
+
+    printBorder();
+
+
+    for (const auto& entry : data) {
+        cout << "| " << left << setw(wordWidth) << entry.first
+             << " | " << left << setw(meaningWidth) << entry.second << " |\n";
+        printBorder();
+    }
+}
+
+
 
 void showWordMeaningTable(pair<string, string> entry, pair<string, string> val) {
     const int wordWidth = 22;
